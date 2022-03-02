@@ -7,6 +7,7 @@ const tacheSchema = mongoose.Schema({
   employés: { type: String, required: true },
   dateDeDébut: { type: Date, required: true },
   dateDeFin: { type: Date, required: true },
+  isAdmi: { type: String },
 });
 
 module.exports = mongoose.model("Tache", tacheSchema);

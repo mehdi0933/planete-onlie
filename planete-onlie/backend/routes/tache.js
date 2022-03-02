@@ -2,18 +2,15 @@ const express = require("express");
 const router = express.Router();
 
 const tacheCtrl = require("../controllers/tache");
-
+const auth = require("../middleware/auth");
 // creer tache
-router.post("/donnerTache", tacheCtrl.donnerTache);
-//designe employés
-// router.post("/donnerEmploye", tacheCtrl.donnerEmploye);
 
 // afficher tache
-router.get("/voireTache", tacheCtrl.voireTache);
+router.get("/voireTache", auth, tacheCtrl.voireTache);
 // enregistrer tache
-router.post("/donnerTache", tacheCtrl.donnerTache);
+router.post("/donnerTache", auth, tacheCtrl.donnerTache);
 
 // supprime
-router.delete("/supprirmeTache", tacheCtrl.supprimerTache);
+router.delete("/supprirmeTache", auth, tacheCtrl.supprimerTache);
 
 module.exports = router;
