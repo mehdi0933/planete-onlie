@@ -1,6 +1,10 @@
 <template>
   <div class="taches">
     <Header v-if="connected" />
+    <router-link to="/">Se connecter</router-link> |
+    <router-link to="/signupViews" class="active">S'inscrire</router-link>
+    <router-link to="/signupViews" class="active">S'inscrire</router-link>
+
     <article class="tache" v-for="tache in taches" :key="tache.id">
       <h2 class="tache-libelle">{{ tache.libelle }}</h2>
       <p class="tache-employe">{{ tache.employe }}</p>

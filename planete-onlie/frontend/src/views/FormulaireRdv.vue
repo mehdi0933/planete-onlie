@@ -1,6 +1,8 @@
 <template>
   <div class="rdv">
     <Header v-if="connected" />
+    <router-link to="/ToutRdv">Se ToutRdv</router-link> |
+    <router-link to="/FormulaireRdv" class="active">FormulaireRdv</router-link>
     <div class="rdv-create-btn" @click="visible = true">Ajouter un post</div>
     <div class="wrapper">
       <form class="rdv-form" @submit.prevent="sendrdv()">
